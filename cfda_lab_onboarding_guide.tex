@@ -1,0 +1,268 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=0.68in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\usepackage{CJKutf8}
+
+\definecolor{LabBlue}{HTML}{2858F0}
+\definecolor{LabTeal}{HTML}{9AA4B2}
+\definecolor{LabInk}{HTML}{1E2933}
+\definecolor{LabMuted}{HTML}{5E6A72}
+\definecolor{LabLine}{HTML}{D9E2E7}
+\definecolor{LabSoft}{HTML}{F7F9FC}
+\definecolor{LabGold}{HTML}{64748B}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=LabBlue,
+  linkcolor=LabBlue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[L]{\textcolor{LabMuted}{CFDA Lab Onboarding Guide}}
+\fancyfoot[R]{\textcolor{LabMuted}{Page \thepage\ of \pageref{LastPage}}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=*, itemsep=2pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, itemsep=3pt, topsep=3pt}
+\renewcommand{\arraystretch}{1.24}
+
+\titleformat{\section}
+  {\Large\bfseries\color{LabInk}}
+  {}{0pt}{}
+  [\vspace{-4pt}\textcolor{LabBlue}{\titlerule[1.2pt]}]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{LabBlue}}
+  {}{0pt}{}
+
+\newcommand{\pill}[1]{%
+  \tikz[baseline=(text.base)]{
+    \node[
+      rounded corners=7pt,
+      fill=LabSoft,
+      draw=LabLine,
+      inner xsep=7pt,
+      inner ysep=3pt
+    ] (text) {\footnotesize\textcolor{LabBlue}{#1}};
+  }%
+}
+
+\newcommand{\checkbox}{\textcolor{LabBlue}{\(\square\)}}
+
+\newcommand{\infocard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      rounded corners=5pt,
+      fill=LabLine!18,
+      draw=LabLine,
+      line width=0.7pt,
+      inner sep=10pt,
+      text width=\dimexpr\linewidth-22pt\relax
+    ] {
+      {\large\bfseries\color{LabInk} #1}\\[3pt]
+      {\color{LabMuted} #2}
+    };
+  \end{tikzpicture}
+}
+
+\newcommand{\importantcard}[2]{%
+  \begin{tikzpicture}
+    \node[
+      rounded corners=5pt,
+      fill=LabBlue!6,
+      draw=LabBlue,
+      line width=0.9pt,
+      inner sep=10pt,
+      text width=\dimexpr\linewidth-22pt\relax
+    ] {
+      {\large\bfseries\color{LabInk} #1}\\[3pt]
+      {\color{LabInk} #2}
+    };
+  \end{tikzpicture}
+}
+
+\begin{document}
+
+
+
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[white] (current page.north west) rectangle (current page.south east);
+  \fill[LabSoft] ([yshift=-6.55in]current page.north west) rectangle (current page.south east);
+  \fill[LabBlue] ([xshift=-0.03in]current page.north west) rectangle ([xshift=0.19in]current page.south west);
+  \fill[LabTeal] ([xshift=0.19in]current page.north west) rectangle ([xshift=0.23in]current page.south west);
+  \draw[LabLine,line width=0.6pt] ([xshift=0.62in,yshift=-1.58in]current page.north west) -- ([xshift=-0.70in,yshift=-1.58in]current page.north east);
+  \draw[LabLine,line width=0.6pt] ([xshift=0.62in,yshift=-6.55in]current page.north west) -- ([xshift=-0.70in,yshift=-6.55in]current page.north east);
+\end{tikzpicture}
+
+\vspace*{-0.03in}
+\hspace*{0.05in}\includegraphics[width=1.85in]{cfda_clip_labs.png}
+
+\vspace{1.08in}
+\hspace*{0.06in}
+\begin{minipage}{0.80\textwidth}
+{\sffamily\bfseries\large\color{LabMuted} NEW MEMBER GUIDE}
+
+\vspace{0.20in}
+{\sffamily\fontsize{34}{40}\selectfont\bfseries\color{LabInk} New Member\\[0.08in]Onboarding Guide}
+
+\vspace{0.24in}
+{\sffamily\Large\bfseries\color{LabBlue} CFDA Lab}
+
+\vspace{0.34in}
+{\sffamily\large\color{LabMuted}
+Welcome to CFDA Lab. This guide summarizes the information we need from you, the accounts you should confirm, and the recurring reporting routines used by the lab.
+}
+\end{minipage}
+
+\vfill
+\end{titlepage}
+
+
+
+
+\section{1. Profile Materials for the Lab Website}
+
+Your information will be added to the lab website:
+\href{http://cfda.csie.org/}{\textbf{http://cfda.csie.org/}}.
+Please provide the following materials.
+
+\vspace{0.08in}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34in} >{\raggedright\arraybackslash}p{2.1in} X}
+\textbf{} & \textbf{Item} & \textbf{What to Provide}\\
+\checkbox & English name & Example: \textit{Chuan-Ju Wang}.\\
+\checkbox & Profile photo & Choose any photo or image that represents you. Please convert it to \textbf{270 x 270 pixels}.\\
+\checkbox & Email address & Use the address you want shown on the lab website.\\
+\checkbox & Facebook link & Optional. Provide the URL only if available and you want it listed.\\
+\checkbox & LinkedIn link & Optional. Provide the URL only if available and you want it listed.\\
+\checkbox & Personal website & Optional. Provide the URL only if available and you want it listed.\\
+\end{tabularx}
+
+\section{2. Lab Access, Calendar, and Groups Checklist}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34in} X}
+\checkbox & Confirm that you have an account for the lab wiki:
+\href{https://clip.csie.org/wiki/projects/cliplab1/CLIP_Lab_.html}{\nolinkurl{https://clip.csie.org/wiki/projects/cliplab1/CLIP_Lab_.html}}.\\
+\checkbox & Confirm that you have been added to the mailing list:
+\textbf{cfda-members@googlegroups.com}.\\
+\checkbox & Confirm that you have been added to the lab Slack workspace or group.\\
+\checkbox & Join the lab Facebook group.\\
+\checkbox & Add the lab Google Calendar to your own calendar.\\
+\end{tabularx}
+
+\vspace{0.06in}
+\begin{itemize}
+  \item \textbf{\textcolor{LabBlue}{Facebook Group:}} \href{https://www.facebook.com/groups/152361831510746}{Open the lab Facebook group}
+  \item \textbf{\textcolor{LabBlue}{Google Calendar:}} \href{https://calendar.google.com/calendar/embed?src=k4jaluls2jm62idpq7do14va6k%40group.calendar.google.com\&ctz=Asia%2FTaipei}{Open the lab Google Calendar}
+\end{itemize}
+
+\vspace{0.08in}
+\infocard{If Access Is Missing}{If you find that you do not have one of these accounts or group memberships, please contact the professor or a designated senior lab member for assistance.}
+
+\vspace{0.08in}
+\importantcard{Regular Group Meeting}{The lab has a regular group meeting every Friday morning at 10:30 AM. The meeting link is available in the Google Calendar.}
+
+\section{3. Weekly Report Submission}
+
+Weekly reports should be emailed to \textbf{cfda-members@googlegroups.com}. Please follow the rules below exactly so the automated tracking system can identify your report.
+
+\begin{enumerate}
+  \item \textbf{Submission deadline:} Every Monday before midnight.
+  \item \textbf{Email subject format:} \texttt{[Weekly Report] YYYYMMDD Name}
+  \item \textbf{Date rule:} The date should always correspond to the Monday of that week.
+  \item \textbf{Automated confirmation:} After your report is received, you should receive an automatic confirmation email.
+  \item \textbf{Automated reminder:} If your report has not been received, the system will send an automatic reminder.
+\end{enumerate}
+
+\vspace{0.04in}
+Your weekly report should briefly include:
+\begin{itemize}
+  \item Progress from the past week.
+  \item Current issues or blockers.
+  \item Plans for the coming week.
+\end{itemize}
+
+\vspace{0.08in}
+\begin{tikzpicture}
+\node[
+  rounded corners=5pt,
+  fill=white,
+  draw=LabGold,
+  line width=0.8pt,
+  inner sep=10pt,
+  text width=\dimexpr\linewidth-22pt\relax
+] {
+  {\bfseries\color{LabInk} Subject example}\\[4pt]
+  \texttt{[Weekly Report] 20260817 }\begin{CJK*}{UTF8}{gbsn}王小明\end{CJK*}\\[3pt]
+  {\small\color{LabMuted}Use the Monday date for that week and keep the format unchanged.}
+};
+\end{tikzpicture}
+
+\section{4. Monthly Progress Report}
+
+RAs and PhD students report their progress from the previous month. Monthly progress reports are usually presented on the first Friday of each month from 9:45 AM to 10:30 AM, but the exact date and time will be recorded in the lab Google Calendar. Each presenter briefly summarizes the previous month's progress and the next steps in the order listed in the slide deck.
+
+\vspace{0.06in}
+\href{https://docs.google.com/presentation/d/1sXkBnvXDnAG33AeJbZ-oW9Hgz6Ejv8e4L1IHmWI_omg/edit?usp=sharing}{Open the monthly report slide deck}
+
+\vspace{0.12in}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34in} X}
+\checkbox & Summarize what you worked on during the previous month.\\
+\checkbox & Keep your update clear enough for other lab members to follow.\\
+\checkbox & If you are a new RA or PhD student, add your name to the final slide of the monthly report deck. You can follow the format used by other presenters on the previous slides.\\
+\end{tabularx}
+
+
+\section{5. Who to Ask}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.1in} X}
+\textbf{CFDA Lab server accounts} & Contact Hung-Chun Hsu at \href{mailto:lucas.hsuhungchun.work@gmail.com}{lucas.hsuhungchun.work@gmail.com}.\\
+\textbf{VPN and information security} & Contact \href{mailto:infosecu@iis.sinica.edu.tw}{infosecu@iis.sinica.edu.tw}, or call 02-2788-3799 ext. 1301.\\
+\textbf{Attendance and leave (RAs only)} & Check the WebITR attendance system through \href{https://eip.apps.sinica.edu.tw/}{Academia Sinica EIP}.\\
+\end{tabularx}
+
+
+\section{6. Maintaining This Guide}
+
+This onboarding guide is maintained as a living document. New members are encouraged to help keep it accurate and useful for future lab members.
+
+\textbf{Repository:}
+\href{https://github.com/jerewang/CFDA-Lab-Onboarding}{CFDA Lab Onboarding Guide}
+
+After completing your onboarding, if you notice any outdated information, broken links, missing steps, or unclear instructions, please help improve the guide.
+
+\begin{itemize}
+  \item For minor updates, such as correcting broken links, contact information, typos, or clarifying existing instructions, you may submit an update through the lab's GitHub repository.
+
+  \item Please create a new branch and submit a pull request rather than modifying the main branch directly.
+
+  \item Briefly explain what you changed and why in the pull request.
+
+  \item Changes involving lab policies, meeting schedules, reporting requirements, or other lab-wide rules should be confirmed with Prof. Wang before being incorporated.
+\end{itemize}
+
+The goal is for each new member to help make the onboarding process a little clearer for the next person.
+
+\vfill
+{\small\color{LabMuted}Last updated: August 2026}
+
+\end{document}
